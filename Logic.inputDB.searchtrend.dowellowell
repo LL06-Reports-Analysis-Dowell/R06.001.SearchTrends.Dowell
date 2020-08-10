@@ -1,33 +1,23 @@
-PHASE 1
-
 //step :Check the clock(create the clock function)
 //step :Select the cities
 //step :Fetch  the Top search trends
 //step :Fetch the Rising search trends
 //step :Save to data base(time,search querries,cities)
 
-PHASE 2--Pytrend
 
-//Step 1) Fetching the 20 search trends from google trends per hour.
-          We will be selecting the specific country first.
-          We will use pytrends library in python to get the search trends for hourly bases.
-          Example : pytrend.trending_searches(pn='united_states') 
-//Step 2) Getting top of every search trend separately
-          Under process
-//Step 3) Getting Rising of every search trend separately
-          Under process
-//Step 4) getting the city which have browse the search trends most
-          We are getting all the city of the country on a scale of 0 to 100
-          We will be using pytrends library feature to get those
-          Example : pytrend.interest_by_region(inc_low_vol=False,inc_geo_code=True)
+LOGIC 1
 
 
-PHASE 3--Mongodb
-//Step 1) Using pymongo fetch the necessary packages
-//Step 2) Prepare the DFD explaining the DB Name,Collection Name and number of Collections
-//Step 3) initialize the Schema for the Json documents(if necessary)
-//Step 4) fields Should have consistency
-//Step 4) Define each field and their respective values 
-//Step 5) Create a sample document explaining every fields and the type of the field like(Array,object,Array of objects,Embeded Documents)
-//Step 6) Find python packages to write into DB in the desired way 
-//Step 7) Save to DB
+Step1  We get the current 20 keywords country-wise, i.e. 20 for India, 20 of US. Which is real-time and we can fetch that data on hourly basis.
+
+Step 2 Using each keyword, we will use predefined states that we can use in Google trends Explore. For example, for each keyword, we will check for the state Karnataka, Maharashtra, Delhi, California, etc.
+
+Step 3 After selecting the predefine states of cities that we require(cities mentioned in Google sheets), we will get "interest by region" data from Google trends Explore page. 
+       This provides us with the list of Cities of selected state in which the keyword that we chose is trending. We will get it's relative value as well to compare it further.
+
+Step 4 After gathering all the keywords for particular city, we sort them in descending order of their relative 
+       values(https://docs.google.com/spreadsheets/d/18rJcYEoYCNZKt2r4pi6W9hD12PntnRF8Xhs2rYuCt9g/edit?ts=5f1fc7fb#gid=1736763714&range=C27) retrieved from the step above.
+
+Step 5 Fifth, each city will have it's own document for every hour. 
+       For each hour, documents will be added for same predefined cities but keywords and time will be changed. This we can store on mongoDB.
+
