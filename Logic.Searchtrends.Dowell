@@ -21,3 +21,13 @@ Step 4 After gathering all the keywords for particular city, we sort them in des
 Step 5 Fifth, each city will have it's own document for every hour. 
        For each hour, documents will be added for same predefined cities but keywords and time will be changed. This we can store on mongoDB.
 
+LOGIC 2
+
+Step 1 Categories trend topic
+Step 2 We will have certain topic like,Entertainment,Sports,News etc..
+Step 3 Give  each trends topics in any of the tool(like google ads,keyword finder....)
+Step 5  check whether we can get information for a city wise data for an hourly basis
+Findings till 18-08-2020(https://docs.google.com/spreadsheets/d/1TtVwjYIADsP7ZqBYyflmSs4Smz9pEuDhh1B2uBbmLYA/edit#gid=0)
+
+LOGIC 3
+Step 1 We can get hourly top trends and Hashtags from twitter on city basis 
