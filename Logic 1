@@ -1,0 +1,37 @@
+
+
+Phase 1 : Get a list of words using autocomplete  from google on the basis of a city for all the possible alphabets and special character.
+Phase 2 : After fetching for one language do the same process for a different language which has role in that City\Country.
+Phase 3 : Categorize according to the city then the respective state.
+Phase 4 : Merge this data with google trend for that respective state.
+Phase 5 : Analyze the word and the value for that particular word to sort the accordingly.
+
+
+
+Phase 1
+
+Step 1 : Understanding AutoComplete
+       a)Different cities  have different searches
+       b)We can get the searches for the alphabates with scrapping/ request function
+       c)variation in the searches with laptop and mobile. 
+       d)vpn or any different method to get the searches for different cities
+Step 2 : Without using VPN how to get the data for a different city.
+        a) Manually change the browser location to another.
+        b) Use Evaluators from different Cities
+        
+        2.a) Step for manually changing the location
+             Step 1  :Go to setting>Privacy and security>site settings>Location check whether google is  present in the blocked area(need confirmation)
+             Step 2  : Go to incognito mode(ctrl+shift+n)
+             Step3   : Go to developper option(ctrl+shift+i)
+             Step 4  : Go to Customize and Control Dev toools (three dots icon top right corner)
+             Step 5  : Select more tools>sensors>Location>manage>Add location
+             Step 6  : Add your Location name(can be any)
+             Step 7  : Add Lat,Long,Timezone & Locale(any others location)
+             Step 8  : Click on Add ,navigate one step back
+             Step 9  : Repeat step 5 Select more tools>sensors>Location>manage> change to your newly added location
+             Step 10 : Refresh the  page 
+             Step 11 : Go to google>"search anything">navigate to the bottom of the page>use precise location>Allow.
+             Step 12 : we will be able to search on that particular location.
+             ##
+             
+            
