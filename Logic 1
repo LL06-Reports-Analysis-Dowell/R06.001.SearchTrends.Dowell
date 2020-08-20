@@ -1,4 +1,12 @@
 
+Change the browser location
+Get a search for a-z,0-9,A-Z,punctuations, for a particular city with english(50 * 10 words needed as output).
+Results for capital and small letters are same 
+No results for , { [ } ] % ? ' "
+Tools has to be found.Google autocomplete API/chrome driver extensions has to be checked.
+Out of 500 words, find the unique words  
+Get search volumes for these unique keywords using keywordtool.io/google search API with input as city.
+
 
 Phase 1 : Get a list of words using autocomplete  from google on the basis of a city for all the possible alphabets and special character.
 Phase 2 : After fetching for one language do the same process for a different language which has role in that City\Country.
