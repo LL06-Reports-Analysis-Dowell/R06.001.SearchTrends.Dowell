@@ -17,29 +17,63 @@ Phase 5 : Analyze the word and the value for that particular word to sort the ac
 
 
 Phase 1
-
-Step 1 : Understanding AutoComplete
-       a)Different cities  have different searches
-       b)We can get the searches for the alphabates with scrapping/ request function
-       c)variation in the searches with laptop and mobile. 
-       d)vpn or any different method to get the searches for different cities
-Step 2 : Without using VPN how to get the data for a different city.
-        a) Manually change the browser location to another.
-        b) Use Evaluators from different Cities
+      
+       Step 1 : Understanding AutoComplete
+                a)Different cities  have different searches
+                b)We can get the searches for the alphabates with scrapping/ request function
+                c)variation in the searches with laptop and mobile. 
+                d)vpn or any different method to get the searches for different cities
+       Step 2 : Without using VPN how to get the data for a different city.
+                a) Manually change the browser location to another.
+                b) Use Evaluators from different Cities
         
-        2.a) Step for manually changing the location
-             Step 1  :Go to setting>Privacy and security>site settings>Location check whether google is  present in the blocked area(need confirmation)
-             Step 2  : Go to incognito mode(ctrl+shift+n)
-             Step3   : Go to developper option(ctrl+shift+i)
-             Step 4  : Go to Customize and Control Dev toools (three dots icon top right corner)
-             Step 5  : Select more tools>sensors>Location>manage>Add location
-             Step 6  : Add your Location name(can be any)
-             Step 7  : Add Lat,Long,Timezone & Locale(any others location)
-             Step 8  : Click on Add ,navigate one step back
-             Step 9  : Repeat step 5 Select more tools>sensors>Location>manage> change to your newly added location
-             Step 10 : Refresh the  page 
-             Step 11 : Go to google>"search anything">navigate to the bottom of the page>use precise location>Allow.
-             Step 12 : we will be able to search on that particular location.
-             ##
-             
-            
+                 2.a) Step for manually changing the location
+                 Step 1  :Go to setting>Privacy and security>site settings>Location check whether google is  present in the blocked area(need confirmation)
+                 Step 2  : Go to incognito mode(ctrl+shift+n)
+                 Step3   : Go to developper option(ctrl+shift+i)
+                 Step 4  : Go to Customize and Control Dev toools (three dots icon top right corner)
+                 Step 5  : Select more tools>sensors>Location>manage>Add location
+                 Step 6  : Add your Location name(can be any)
+                 Step 7  : Add Lat,Long,Timezone & Locale(any others location)
+                 Step 8  : Click on Add ,navigate one step back
+                 Step 9  : Repeat step 5 Select more tools>sensors>Location>manage> change to your newly added location
+                 Step 10 : Refresh the  page 
+                 Step 11 : Go to google>"search anything">navigate to the bottom of the page>use precise location>Allow.
+                 Step 12 : we will be able to search on that particular location.
+                ##Changing location from one location using python and retreving data for that particular location is under process##
+ 
+ Phase 2 - (Language)
+              Step 1 : Understanding Google language settings(Hindi is selected for sample,it will change according to different languages used in different cities)
+                      a)Use English settings and use Hindi letters for autocomplete
+                      b)Use Hindi settings and use Hindi letter for autocomplete(Users who use Hindi settings, result will be different )
+                      c)Use Hindi settings and use English letters for autocomplete(When we write 'a', we will get results in hindi+english)
+                      d)Use other languages and use Hindi letter
+         
+                      1.a) When we use English setting and enter Hindi alphabets we get output as hindi words
+                          Step 1 : Use the same functionality for english
+                          Step 2 : Create an array of hindi alphabets
+                          Step 3 : For each alphabet get all the possible ten autocomplete results
+                          Step 4 : Store the results seperately mentioning the setting which is English settings
+                          
+                          Output:Hindi words
+                         
+                      1.b) When we use Hindi setting and enter Hindi alphabets for autocomplete
+                          Step 1 : Use the same functionality for english
+                          Step 2 : Create an array of hindi alphabets
+                          Step 3 : For each alphabet get all the possible ten autocomplete results
+                          Step 4 : Store the results seperately mentioning the setting which is Hindi seting
+                          
+                          Output : Hindi words
+                      
+                      1.c) Use Hindi settings and use English letters for autocomplete
+                          Step 1 : Use the same functionality for english
+                          Step 2 : Create an array of English alphabets
+                          Step 3 : For each alphabet get all the possible ten autocomplete results
+                          Step 4 : Store the results seperately mentioning the setting which is Hindi seting
+                          
+                          Output : Combination of both Hindi and English words
+                      
+                      1.d) Use other languages and use Hindi letter##optional(need to confirm)##
+                      
+                      
+                      
