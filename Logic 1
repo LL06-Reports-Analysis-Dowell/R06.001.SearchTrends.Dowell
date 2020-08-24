@@ -4,33 +4,28 @@ Get a search for a-z,0-9,A-Z,punctuations, for a particular city with english(50
 Results for capital and small letters are same 
 No results for , { [ } ] % ? ' "
 Tools has to be found.Google autocomplete API/chrome driver extensions has to be checked.
-Out of 500 words, find the unique words  
+##Out of 500 words, find the unique words##
 Get search volumes for these unique keywords using keywordtool.io/google search API with input as city.
 
-
-Phase 1 : Get a list of words using autocomplete  from google on the basis of a city for all the possible alphabets and special character.
-Phase 2 : After fetching for one language do the same process for a different language which has role in that City\Country.
-Phase 3 : Categorize according to the city then the respective state.
-Phase 4 : Merge this data with google trend for that respective state.
-Phase 5 : Analyze the word and the value for that particular word to sort the accordingly.
-
+########Search trends#########
+Phase 1 : Location-To get the trends for a particular city
+Phase 2 : Autocomplete-using google autocomplete we are fetching all the the output for all possible set of alphabets in all possible languages used in a city
+Phase 3 : Search volume-Find the search volume for each words for all languages in a city then find the search volume for that keyword(Google trends,Google ads,keywoord tool)
+Phase 4 : Data Storing- All this data stored into a DB
 
 
-Phase 1
+
+Phase 1- Location 
       
-       Step 1 : Understanding AutoComplete
-                a)Different cities  have different searches
-                b)We can get the searches for the alphabates with scrapping/ request function
-                c)variation in the searches with laptop and mobile. 
-                d)vpn or any different method to get the searches for different cities
-       Step 2 : Without using VPN how to get the data for a different city.
+       
+       Step 1 : Without using VPN how to get the data for a different city.
                 a) Manually change the browser location to another.
                 b) Use Evaluators from different Cities
         
                  2.a) Step for manually changing the location
                  Step 1  :Go to setting>Privacy and security>site settings>Location check whether google is  present in the blocked area(need confirmation)
                  Step 2  : Go to incognito mode(ctrl+shift+n)
-                 Step3   : Go to developper option(ctrl+shift+i)
+                 Step 3   : Go to developper option(ctrl+shift+i)
                  Step 4  : Go to Customize and Control Dev toools (three dots icon top right corner)
                  Step 5  : Select more tools>sensors>Location>manage>Add location
                  Step 6  : Add your Location name(can be any)
@@ -42,14 +37,32 @@ Phase 1
                  Step 12 : we will be able to search on that particular location.
                 ##Changing location from one location using python and retreving data for that particular location is under process##
  
- Phase 2 - (Language)
-              Step 1 : Understanding Google language settings(Hindi is selected for sample,it will change according to different languages used in different cities)
+ Phase 2 - Autocomplete
+        
+        
+             Understanding AutoComplete
+                a)Different cities  have different searches
+                b)We can get the searches for the alphabates with scrapping/ request function
+                c)variation in the searches with laptop and mobile. 
+                d)vpn or any different method to get the searches for different cities
+              
+ 
+              Step 1 : a)Get a search for a-z,0-9,A-Z,punctuations, for a particular city with english(50 * 10 words needed as output).
+                       b)Results for capital and small letters are same 
+                       c)No results for , { [ } ] % ? ' "
+           
+           
+            ##Step 2 : How to select a set of language for a particular city what are the factors(##logic pending##)##
+              
+             
+             
+              Step 3 : Understanding Google language settings(Hindi is selected for sample,it will change according to different languages used in different cities)
                       a)Use English settings and use Hindi letters for autocomplete
                       b)Use Hindi settings and use Hindi letter for autocomplete(Users who use Hindi settings, result will be different )
                       c)Use Hindi settings and use English letters for autocomplete(When we write 'a', we will get results in hindi+english)
                       d)Use other languages and use Hindi letter
          
-                      1.a) When we use English setting and enter Hindi alphabets we get output as hindi words
+                      3.a) When we use English setting and enter Hindi alphabets we get output as hindi words
                           Step 1 : Use the same functionality for english
                           Step 2 : Create an array of hindi alphabets
                           Step 3 : For each alphabet get all the possible ten autocomplete results
@@ -57,7 +70,7 @@ Phase 1
                           
                           Output:Hindi words
                          
-                      1.b) When we use Hindi setting and enter Hindi alphabets for autocomplete
+                      3.b) When we use Hindi setting and enter Hindi alphabets for autocomplete
                           Step 1 : Use the same functionality for english
                           Step 2 : Create an array of hindi alphabets
                           Step 3 : For each alphabet get all the possible ten autocomplete results
@@ -65,7 +78,7 @@ Phase 1
                           
                           Output : Hindi words
                       
-                      1.c) Use Hindi settings and use English letters for autocomplete
+                      3.c) Use Hindi settings and use English letters for autocomplete
                           Step 1 : Use the same functionality for english
                           Step 2 : Create an array of English alphabets
                           Step 3 : For each alphabet get all the possible ten autocomplete results
@@ -73,7 +86,7 @@ Phase 1
                           
                           Output : Combination of both Hindi and English words
                       
-                      1.d) Use other languages and use Hindi letter##optional(need to confirm)##
-                      
+                      3.d) Use other languages and use Hindi letter##optional(need to confirm)##
+                      ##Changing language settings from python and retreving data for that particular location is under process##
                       
                       
