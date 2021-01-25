@@ -1,0 +1,9 @@
+selenium==3.141.0
+gspread==3.6.0
+pymongo==3.11.0
+pychrome==0.2.3
+pandas>=1.0.5
+numpy>=1.18.5
+webdriver_manager==3.2.1
+srv==1.0.0
+dnspython==2.0.0
