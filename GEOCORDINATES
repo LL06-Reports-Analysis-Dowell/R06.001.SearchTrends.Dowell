@@ -1,0 +1,265 @@
+import numpy as np
+import math
+from math import sqrt
+import pandas as pd
+
+
+pd.set_option('display.max_columns', None)#for displaying all the elements in the data frame
+pd.set_option('display.expand_frame_repr', False) 
+pd.set_option('max_colwidth', -1)
+pd.set_option('display.max_rows', None)
+
+
+length=float(input("please enter the length of rectangle : "))
+width=float(input("please enter the width of rectangle : "))
+area=(length*width)                                                #calculate area of rectangle
+N=int(input("please input the total number of circles inscribe in the rectangle : "))
+area_of_circle=area/N                                                                   #calculate area of circle
+radius=math.sqrt(area_of_circle/3.142)                              
+#calculate the radius of circle
+diameter=2*radius                                                                      #calculate the diameter of circle
+
+print("The area of a rectangle using",length,"and",width,"=",area)
+print("the total number of circles inscribe in the rectangle: ",N)
+print("area of the circle: ", float(area_of_circle))
+print("radius of the circle: ",radius)
+print("diameter of the cricle: ",diameter)
+
+radi = float(input ("Input the radius of the circle : "))
+hyp= 2*radi
+heigh = round(radi * sqrt(3),10)
+
+print("Radius of circle: ",radi)
+print("Distance between centres of two circles: ", float(hyp))
+print(" half of the Distance between two horizontal circles: ", heigh)
+
+
+central_lat = float(input("Input the centeral latitude"))           #dont run the following 6 cells unless you need conversion#
+central_long = float(input("Input the centeral long"))
+#lat = float(input("Input the referal latitude"))
+#long = float(input("Input the referal long"))
+
+print("Input the centeral latitude: ",central_lat)
+print("Input the centeral longitude: ",central_long)
+#print("Input the referal latitude: ",lat)
+#print("Input the referal longitude: ",long)
+
+
+
+x = input ("Input the number of iterations for x axis : ")
+
+from numpy import arange
+def seq(start, iteration, step):
+    y = []
+    x = []
+    endval = 0
+    i = 0
+    count = start
+    
+    ##for d in arange(start,iteration,step):   # float value is allowed in arange func
+      ##  y.append(round(d,3))
+        ##endval = -d
+        
+    
+    while i < (iteration+step):
+        y.append(round(count,3))
+        if i != iteration :
+            count += step
+        i += 1
+    
+    #i=start
+    count = -count
+    i = start
+    while i < iteration:
+        x.append(round(count,3))
+        count += step
+        i += 1
+    
+    x.extend(y)
+    #x=[x + step for x in arange(start, iteration)]
+    
+    ##for d in arange(endval,iteration,step):   
+        #if round(d) == -0:
+            #x.append(0.0)#d = 0.0
+        #else:
+      ##      x.append(round(d,3))
+    return x
+
+a = seq(start = 0, iteration = int(x), step = heigh)
+a
+
+y = input ("Input the number of iterations for y axis : ")
+
+from numpy import arange
+def seq(start, iteration, step):
+    y = []
+    x = []
+    endval = 0
+    i = 0
+    count = start
+    
+    ##for d in arange(start,iteration,step):   # float value is allowed in arange func
+      ##  y.append(round(d,3))
+        ##endval = -d
+        
+    
+    while i < (iteration+step):
+        y.append(round(count,3))
+        if i != iteration :
+            count += step
+        i += 1
+    
+    #i=start
+    count = -count
+    i = start
+    while i < iteration:
+        x.append(round(count,3))
+        count += step
+        i += 1
+    
+    x.extend(y)
+    #x=[x + step for x in arange(start, iteration)]
+    
+    ##for d in arange(endval,iteration,step):   
+        #if round(d) == -0:
+            #x.append(0.0)#d = 0.0
+        #else:
+      ##      x.append(round(d,3))
+    return x
+
+b = seq(start = 0, iteration = int(y), step = radi)
+b
+
+
+
+
+c=[]
+for i in a:
+         j= round(central_long + i,6)            #adding central longitude in each co ordinate of x axis
+         c.append(j)
+print(c)
+
+
+d=[]
+for i in b:
+         j= round(central_lat + i,6)          # adding central latitude in each co ordinate of y axis
+         d.append(j)
+print(d)
+
+df = pd.DataFrame(columns=c,index=d)#Only for visualization of the code run the upcoming 12 cells if needed#
+df
+
+
+df.replace(to_replace=np.NaN,value="",inplace=True)
+df1 = df.copy()#changes in df1 will not effect in df
+
+for i in d:#for all values placing
+    for j in c:
+        df.at[i,j]=[i,j]
+        
+        
+        
+        
+        
+odd_ind = [] #getting the odd and even indexing value of index seperating d into even indexing and odd indexing of d
+even_ind = [] 
+for i in range(0, len(d)): 
+    if i % 2==0: 
+        even_ind.append(d[i]) 
+    else : 
+        odd_ind.append(d[i])      
+        
+        
+odd_col = []  #getting the odd and even columns value of index seperating c into even columns and odd columns  of c
+even_col = [] 
+for i in range(0, len(c)): 
+    if i % 2==0: 
+        even_col.append(c[i]) 
+    else : 
+        odd_col.append(c[i]) 
+        
+        
+        
+for i in even_ind:# for placing the odd columns
+    for j in even_col:
+        df1.at[i,j]=(j,i)
+        
+        
+ for i in odd_ind:# for even columns
+    for j in odd_col:
+        df1.at[i,j]=(j,i)        
+        
+ 
+list1 = arr.tolist()
+print(f'List: {list1}')
+
+
+dd=[]
+for i in range(len(list1)):
+    dd.append(list(filter(lambda a: a != '', list1[i])))
+    
+    
+    
+for i in range(len(dd)):
+    print(*dd[i],sep= ",\n")    
+    
+    
+csv_file=df1.to_csv('data_points.csv',header=True)   # exporting pyhton file into csv file of final data points
+print(csv_file)
+
+
+
+from itertools import product #final answer is in this array#
+print("The cartesian product using repeat :") 
+
+combin=list(product(d, a1))
+combin
+
+
+
+
+print(*combin, sep = ",\n")
+
+
+
+    
+    
+    
+    
+
+
+
+ 
+ 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
